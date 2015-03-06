@@ -4,7 +4,7 @@ relative_permalinks: true
 
 # Setup
 title: Zebulun Arendsee 
-tagline: zzzzz
+tagline: Nothing to see
 url: http://getpoole.com
 paginate: 1
 baseurl: /
