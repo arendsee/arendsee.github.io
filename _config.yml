@@ -1,19 +1,2 @@
-# Permalinks
-permalink: pretty
-relative_permalinks: true
-
-# Setup
-title: Zebulun Arendsee 
-tagline: Nothing to see
-url: http://getpoole.com
-paginate: 1
-baseurl: /
-author:
-    name: Zebulun Arendsee
-    url: https://github.com/zbwrnz
-    email: zbwrnz@gmail.com
-
-# Custom vars
-version: 1.0.0
-github:
-    repo: https://github.com/poole/poole
+url: "http://zbwrnz.github.io"
+markdown: kramdown
