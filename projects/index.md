@@ -5,6 +5,6 @@ title: Shiny apps
 
 R studio shiny apps yay!!!!!!!
 
-[shiny apps](/shiny)
+[shiny apps]({% site.url %}/shiny/)
 
-[bioinformatics](/bioinformatics)
+[bioinformatics]({% site.url %}/bioinformatics/)
