@@ -3,8 +3,6 @@ layout: default
 title: Shiny apps 
 ---
 
-R studio shiny apps yay!!!!!!!
+[shiny apps](http://zbwrnz.github.io/shiny/)
 
-[shiny apps]({% site.url %}/shiny/)
-
-[bioinformatics]({% site.url %}/bioinformatics/)
+[bioinformatics](http://zbwrnz.github.io/bioinformatics/)
