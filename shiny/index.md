@@ -3,9 +3,9 @@ layout: default
 title: Shiny apps 
 ---
 
-[orphan dataset](http://arendsee.shinyapps.io/orphan-survey)
+[metaoku](https://metaoku.shinyapps.io/archive/)
 
-[lab dataset](http://arendsee.shinyapps.io/shiny-lab-data)
+[orphan dataset](http://arendsee.shinyapps.io/orphan-survey)
 
 [phylostrata predictions](http://arendsee.shinyapps.io/sim-test)
 
