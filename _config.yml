@@ -1,1 +1,12 @@
+# Site settings
+title: Trepanger
+email: zbwrnz@gmail.com
+description: >
+
+baseurl: "/blog/"
 url: "http://arendsee.github.io"
+github_username: arendsee
+permalink: /:year/:month/:title.html
+
+# Build settings
+markdown: kramdown
