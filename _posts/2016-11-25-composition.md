@@ -51,7 +51,7 @@ foo
 ##         }
 ##         x
 ##     }
-## <environment: 0x1d92170>
+## <environment: 0x3c57170>
 {% endhighlight %}
 
 It would be nice if the composed function printed like this:

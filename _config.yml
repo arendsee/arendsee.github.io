@@ -2,9 +2,9 @@
 title: Trepanger
 email: zbwrnz@gmail.com
 description: >
-
-baseurl: "/blog/"
-url: "http://arendsee.github.io"
+    Blog and website of Zebulun Arendsee
+baseurl: ""
+url: "https://arendsee.github.io"
 github_username: arendsee
 permalink: /:year/:month/:title.html
 
