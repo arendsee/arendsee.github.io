@@ -1,5 +1,6 @@
 ---
 layout: post
+comments: true
 ---
 
 This is my first notebook page. It doesn't contain any content. I will soon

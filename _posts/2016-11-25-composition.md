@@ -1,5 +1,6 @@
 ---
 layout: post
+comments: true
 author: Zebulun Arendsee
 title:  "Transparent composition"
 categories: [R, programming]
