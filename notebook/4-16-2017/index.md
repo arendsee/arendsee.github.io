@@ -1,7 +1,8 @@
 ---
-layout: entry
-author: Zebulun Arendsee
+layout: post
 ---
+
+**Testing**
 
 This is my first notebook page. It doesn't contain any content. I will soon
 leave for China. Since I will still be working full time, I will need to
