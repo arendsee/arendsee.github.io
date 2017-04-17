@@ -1,0 +1,93 @@
+---
+layout: post
+author: Zebulun Arendsee
+title:  "Programatic redefaulting"
+published: false
+---
+
+[srcref reference](https://journal.r-project.org/archive/2010-2/RJournal_2010-2_Murdoch.pdf)
+
+I am currently working on an R-based [workflow
+system](https://github.com/arendsee/pied) under a pure functional programming
+paradigm. 
+
+```{r}
+nothing <- function(...){}
+true <- function(...){TRUE}
+
+h_fun <- function(h) { eval(formals(h)$.fun, environment(h)) }
+h_inode <- function(h) { eval(formals(h)$.inode, environment(h)) }
+
+h_fun_ne <- function(h) { formals(h)$.fun }
+h_inode_ne <- function(h) { formals(h)$.inode }
+
+set_ <- function(field) {
+  fun <- function(h, value){}
+  body(fun) <- substitute(
+    {
+      a <- attributes(h)
+      formals(h)[[field]] <- value
+      attributes(h) <- a
+      h
+    }
+  )
+  environment(fun) <- parent.frame()
+  fun
+}
+
+`h_fun<-` <- set_(".fun")
+`h_inode<-` <- set_(".inode")
+
+hsource_ <- function(
+  f      = nothing,
+  inode  = nothing,
+  args   = list()
+){
+
+  fun <- function(.fun, .args){
+    do.call(.fun, .args)
+  }
+
+  class(fun) <- append('source', class(fun))
+
+  h_fun(fun) <- substitute(f)
+  h_inode(inode) <- substitute(inode)
+
+  fun
+}
+
+hpipe_ <- function(
+  f       = nothing,
+  inode   = nothing,
+  args    = list()
+){
+
+  fun <- function(.fun, .inode, .args){
+    if(class(.inode)[1] != 'list'){
+      .inode <- list(.inode)
+    }
+    a <- lapply(.inode, execute)
+    do.call(.fun, args)
+  }
+
+  class(fun) <- append('pipe', class(fun))
+
+  h_inode(inode) <- substitute(inode)
+  h_fun(f) <- substitute(f)
+  h_args(args)   <- substitute(args)
+
+  fun
+}
+
+#' @rdname node
+#' @export
+hnode <- function(op, ...){
+  if(op == 'source'){
+    fun <- hsource_(...)
+  } else {
+    fun <- hpipe_(...)
+  }
+  parent.env(environment(fun)) <- parent.frame()
+  fun
+}
+```
