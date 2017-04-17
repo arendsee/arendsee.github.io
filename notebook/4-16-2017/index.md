@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: entry
 author: Zebulun Arendsee
 ---
 
