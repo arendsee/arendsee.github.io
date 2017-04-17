@@ -2,10 +2,6 @@
 layout: post
 ---
 
-**Testing**
-
-Why isn't this working?
-
 This is my first notebook page. It doesn't contain any content. I will soon
 leave for China. Since I will still be working full time, I will need to
 develop a robust means of keeping in touch with my lab. The pages in this
