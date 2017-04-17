@@ -2,7 +2,8 @@
 title: Home
 email: zbwrnz@gmail.com
 description: >
-    
+
+disqus_shortname: http-arendsee-github-io
 baseurl: ""
 url: "https://arendsee.github.io"
 github_username: arendsee
