@@ -4,9 +4,23 @@ title: About
 permalink: /about/
 ---
 
-This my new and improved blog site! To all those who have followed my blogs in
-the past, well, I want to know how you did it, because there weren't any.
+
+# Status
+
+As known to all who need to know, my venues of communication are currently
+limited. Google products are not readily accessible, nor, to my surprise is
+Slack. Disqus, the comment provider on this website, is also seemingly blocked,
+which means you can leave messages, but I can't see them. Github, though, is
+all jolly good.
+
+In the near future, I will tunnel through these walls, but for now, if you want
+to communicate with me, post an issue at [this github pages
+repo](https://github.com/arendsee/arendsee.github.io) or at [the coding group
+repo](https://github.com/arendsee/coding-group).
+
+
+# Acknowledgements
 
 Huge thanks to Yihui Xie for the
 [template](https://github.com/yihui/knitr-jekyll) and the awesome R package
-servr, which makes all this so easy.
+servr, which make the posts in R markdown easy.
