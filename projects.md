@@ -4,6 +4,11 @@ title: Projects
 permalink: /projects/
 ---
 
+# Morloc
+
+My primary interest is the development of the programming language
+[morloc](https://github.com/morloc-project/morloc).
+
 # Haskell projects
 
  * [lsystems](https://github.com/arendsee/lsystems) an experimental package for
@@ -14,6 +19,7 @@ permalink: /projects/
 ![lsys3]({{site.baseurl}}/assets/img/sb1-3.png)
 ![lsys4]({{site.baseurl}}/assets/img/sb1-4.png)
 ![lsys5]({{site.baseurl}}/assets/img/sb1-5.png)
+
 
 # Python packages on PyPi
 
@@ -27,14 +33,14 @@ permalink: /projects/
    triple format and uploading it to a GraphDB database. It allows access to
    the data through SPARQL queries and can return FASTA file sequence.
 
- * [smot](https://github.com/flu-crew/smot) is a python package and CLI tool
-   for general purpose phylogenetic tree sub-sampling, annotation, and
-   summarization.
-
  * [flutile](https://github.com/flu-crew/flutile) is a specialized suite of
    tools designed for the flu-crew at
    [USDA-ARS](https://www.ars.usda.gov/midwest-area/ames/nadc/#) and
    collaborators.
+
+ * [smot](https://github.com/flu-crew/smot) is a python package and CLI tool
+   for general purpose phylogenetic tree sub-sampling, annotation, and
+   summarization.
 
  * [smof](https://github.com/incertae-sedis/smof) is a CLI tool for working
    with FASTA files.
@@ -44,6 +50,7 @@ permalink: /projects/
  * [regref](https://github.com/arendsee/regref) offers regular expression based
    search and replace using pattern and replacement expressions from a table.
 
+
 # R CRAN/rOpenSci packages
 
  * [rmonad](https://github.com/arendsee/rmonad) an experimental monadic
@@ -51,8 +58,8 @@ permalink: /projects/
    data, automatic benchmarking, and storing of any raised error messages or
    warnings.
 
-<img src="{{site.baseurl}}/assets/img/rmonad1.png" width="50%">
-<img src="{{site.baseurl}}/assets/img/rmonad2.png" width="40%">
+<img src="{{site.baseurl}}/assets/img/rmonad1.png" width="40%">
+<img src="{{site.baseurl}}/assets/img/rmonad2.png" width="50%">
 
  * [rhmmer](https://github.com/arendsee/rhmmer) a wrapper around the
    bioinformatics package HMMER.
@@ -93,6 +100,18 @@ before the proportion of females reched 0 or 1 and natural reproduction became
 impossible.
 
 ![interstellar]({{site.baseurl}}/assets/img/interstellar.png)
+
+
+# Other
+
+ * [Language Of Dice](https://github.com/arendsee/language-of-dice) was my
+   first attempt at developing a programming language. The goal was to develop
+   a language for specifying discrete probability problems (dice problems) that
+   was sufficiently advanced to model outcomes of encounters in D&D. For
+   example, what is the probability that my group of 3 level-2 fighters will
+   beat the Kraken. All possible attacks, buffs, debuffs, etc would have to be
+   modeled. The project currently consists only of loose specification of
+   syntax, grammar, and a rudimentary lexer and parser.
 
 
 # Grad-school jetsam
