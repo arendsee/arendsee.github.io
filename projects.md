@@ -51,8 +51,8 @@ permalink: /projects/
    data, automatic benchmarking, and storing of any raised error messages or
    warnings.
 
-![rmonad1]({{site.baseurl}}/assets/img/rmonad1.png)
-![rmonad2]({{site.baseurl}}/assets/img/rmonad2.png)
+<img src="{{site.baseurl}}/assets/img/rmonad1.png" width="50%">
+<img src="{{site.baseurl}}/assets/img/rmonad2.png" width="40%">
 
  * [rhmmer](https://github.com/arendsee/rhmmer) a wrapper around the
    bioinformatics package HMMER.
