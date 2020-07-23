@@ -9,12 +9,11 @@ permalink: /projects/
  * [lsystems](https://github.com/arendsee/lsystems) an experimental package for
    specifying and generating deterministic or stochastic L-systems graphics.
 
-![lsys1](https://github.com/arendsee/lsystems/tree/master/images/sb1-1.png)
-![lsys2](https://github.com/arendsee/lsystems/tree/master/images/sb1-2.png)
-![lsys3](https://github.com/arendsee/lsystems/tree/master/images/sb1-3.png)
-![lsys4](https://github.com/arendsee/lsystems/tree/master/images/sb1-4.png)
-![lsys5](https://github.com/arendsee/lsystems/tree/master/images/sb1-5.png)
-
+![lsys1]({{site.baseurl}}/assets/img/sb1-1.png)
+![lsys2]({{site.baseurl}}/assets/img/sb1-2.png)
+![lsys3]({{site.baseurl}}/assets/img/sb1-3.png)
+![lsys4]({{site.baseurl}}/assets/img/sb1-4.png)
+![lsys5]({{site.baseurl}}/assets/img/sb1-5.png)
 
 # Python packages on PyPi
 
