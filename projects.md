@@ -1,11 +1,10 @@
 ---
 layout: page
-title: Shiny
-permalink: /shiny/
+title: Projects 
+permalink: /projects/
 ---
 
-Here are links to my shiny apps. They should all work, if not, feel free to
-write me.
+# R Shiny apps 
 
 Metaoku: [source](https://github.com/arendsee/metaoku) - [app](https://metaoku.shinyapps.io/archive/)
 
