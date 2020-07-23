@@ -9,7 +9,7 @@ permalink: /projects/
  * [lsystems](https://github.com/arendsee/lsystems) an experimental package for
    specifying and generating deterministic or stochastic L-systems graphics.
 
- ![lsys](/assets/images/lsystems.png)
+ ![lsys](/assets/img/lsystems.png)
 
 # Python packages on PyPi
 
