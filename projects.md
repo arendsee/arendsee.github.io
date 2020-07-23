@@ -71,10 +71,32 @@ permalink: /projects/
 
 # R Shiny apps
 
-Metaoku: [source](https://github.com/arendsee/metaoku) - [app](https://metaoku.shinyapps.io/archive/)
+[metaoku](https://github.com/arendsee/metaoku)
+([app](https://metaoku.shinyapps.io/archive/)) was my grand vision for a means
+of sharing and visualizing data organized into normal folders. The project is
+described in my dissertation appendix. The project is basically dead now, but
+it seemed my approach to automatically visualizing data and my simlple data
+type-system are worth returning to at some point.
 
-Orphan survey: [source](https://github.com/arendsee/orphan-survey) - [app](http://arendsee.shinyapps.io/orphan-survey)
+[Orphan survey](https://github.com/arendsee/orphan-survey)
+([app](http://arendsee.shinyapps.io/orphan-survey)) is a Shiny visualization
+program for an unpublished orphan gene study I ran in grad school. Nothing come
+of it ultimately.
 
-Dice probabilities: [source](https://github.com/arendsee/dnd) - [app](http://arendsee.shinyapps.io/dnd-rolls)
+![orphan]({{site.baseurl}}/assets/img/orphan-survey.png)
 
-Small population survival: [source](https://github.com/arendsee/interstellar) - [app](http://arendsee.shinyapps.io/interstellar)
+[dnd](https://github.com/arendsee/dnd)
+([app](http://arendsee.shinyapps.io/dnd-rolls)) is a rudimentary dice
+probability app. Someday, when I feel sufficiently motivated, I'll come back to
+it and expand the functionallity. Dice probability gets interesting when you
+start adding in advantage/disadvantage and other D&D shenanigans.
+
+![dnd]({{site.baseurl}}/assets/img/dnd.png)
+
+[Small population survival](https://github.com/arendsee/interstellar)
+([app](http://arendsee.shinyapps.io/interstellar)) was a visualization app for
+a class project concerning how long a colony on a generation ship would survive
+before the proportion of females reched 0 or 1 and natural reproduction became
+impossible.
+
+![interstellar]({{site.baseurl}}/assets/img/interstellar.png)
