@@ -27,12 +27,6 @@ permalink: /projects/
    triple format and uploading it to a GraphDB database. It allows access to
    the data through SPARQL queries and can return FASTA file sequence.
 
- * [smof](https://github.com/incertae-sedis/smof) is a CLI tool for working
-   with FASTA files.
-
- * [regref](https://github.com/arendsee/regref) offers regular expression based
-   search and replace using pattern and replacement expressions from a table.
-
  * [smot](https://github.com/flu-crew/smot) is a python package and CLI tool
    for general purpose phylogenetic tree sub-sampling, annotation, and
    summarization.
@@ -42,12 +36,23 @@ permalink: /projects/
    [USDA-ARS](https://www.ars.usda.gov/midwest-area/ames/nadc/#) and
    collaborators.
 
+ * [smof](https://github.com/incertae-sedis/smof) is a CLI tool for working
+   with FASTA files.
+
+![smof1]({{site.baseurl}}/assets/img/smof.png)
+
+ * [regref](https://github.com/arendsee/regref) offers regular expression based
+   search and replace using pattern and replacement expressions from a table.
+
 # R CRAN/rOpenSci packages
 
  * [rmonad](https://github.com/arendsee/rmonad) an experimental monadic
    pipeline tool for building branching workflows, storing select intermediate
    data, automatic benchmarking, and storing of any raised error messages or
    warnings.
+
+![rmonad1]({{site.baseurl}}/assets/img/rmonad1.png)
+![rmonad2]({{site.baseurl}}/assets/img/rmonad2.png)
 
  * [rhmmer](https://github.com/arendsee/rhmmer) a wrapper around the
    bioinformatics package HMMER.
@@ -56,18 +61,6 @@ permalink: /projects/
    from the 1KP project website, select the species or clades or interest, and
    automatically download them.
 
-# Grad-school jetsam
-
- * [synder](https://github.com/arendsee/synder) is a high-performance program
-   that maps genomic loci from one species to another using a synteny map. The
-   core algorithm is written in C++ and wrapped in R.
-
- * [phylostratr](https://github.com/arendsee/phylostratr) an buggy little R
-   tool I made as a graduate student and that has unfortunately become popular
-   enough that people pester me for updates and fixes.
-
- * [fagin](https://github.com/arendsee/fagin) another project I developed as a
-   graduate student that, fortunately, no one uses.
 
 # R Shiny apps
 
@@ -100,3 +93,17 @@ before the proportion of females reched 0 or 1 and natural reproduction became
 impossible.
 
 ![interstellar]({{site.baseurl}}/assets/img/interstellar.png)
+
+
+# Grad-school jetsam
+
+ * [synder](https://github.com/arendsee/synder) is a high-performance program
+   that maps genomic loci from one species to another using a synteny map. The
+   core algorithm is written in C++ and wrapped in R.
+
+ * [phylostratr](https://github.com/arendsee/phylostratr) a buggy little R
+   tool I made as a graduate student and that has unfortunately become popular
+   enough that people pester me for updates and fixes.
+
+ * [fagin](https://github.com/arendsee/fagin) another project I developed as a
+   graduate student that, fortunately, no one uses.
