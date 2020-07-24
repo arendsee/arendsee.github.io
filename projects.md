@@ -6,8 +6,14 @@ permalink: /projects/
 
 # Morloc
 
-My primary interest is the development of the programming language
-[morloc](https://github.com/morloc-project/morloc).
+[morloc](https://github.com/morloc-project/morloc) is a functional programming
+language where functions are imported from foreign languages and unified
+through a common type system. The compiler generates the code needed to compose
+functions across languages and also to direct automation of mundane tasks such
+as data validation, type/format conversions, data caching, distributed
+computing, and file reading/writing. In the far future, I hope to develop
+`morloc` into a query language that returns optimized programs from an infinite
+"library" of functions and compositions of functions.
 
 # Haskell projects
 
@@ -69,6 +75,18 @@ My primary interest is the development of the programming language
    automatically download them.
 
 
+# Other
+
+ * [Language Of Dice](https://github.com/arendsee/language-of-dice) was my
+   first attempt at developing a programming language. The goal was to develop
+   a language for specifying discrete probability problems (dice problems) that
+   was sufficiently advanced to model outcomes of encounters in D&D. For
+   example, what is the probability that my group of 3 level-2 fighters will
+   beat the Kraken. All possible attacks, buffs, debuffs, etc would have to be
+   modeled. The project currently consists only of loose specification of
+   syntax, grammar, and a rudimentary lexer and parser.
+
+
 # R Shiny apps
 
 [metaoku](https://github.com/arendsee/metaoku)
@@ -100,18 +118,6 @@ before the proportion of females reched 0 or 1 and natural reproduction became
 impossible.
 
 ![interstellar]({{site.baseurl}}/assets/img/interstellar.png)
-
-
-# Other
-
- * [Language Of Dice](https://github.com/arendsee/language-of-dice) was my
-   first attempt at developing a programming language. The goal was to develop
-   a language for specifying discrete probability problems (dice problems) that
-   was sufficiently advanced to model outcomes of encounters in D&D. For
-   example, what is the probability that my group of 3 level-2 fighters will
-   beat the Kraken. All possible attacks, buffs, debuffs, etc would have to be
-   modeled. The project currently consists only of loose specification of
-   syntax, grammar, and a rudimentary lexer and parser.
 
 
 # Grad-school jetsam
