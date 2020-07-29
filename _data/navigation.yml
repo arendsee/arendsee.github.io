@@ -1,0 +1,8 @@
+# main links
+main:
+  - title: "Projects"
+    url:  /Projects/
+  - title: "Blog"
+    url: /Blog/
+  - title: "Gallery"
+    url: /gallery/

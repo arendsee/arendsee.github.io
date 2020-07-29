@@ -1,10 +1,12 @@
 ---
-layout: page
-title: Projects 
-permalink: /projects/
+layout: single
+title: "Projects"
+permalink: /Projects/
+comments: true
+author_profile: true
 ---
 
-# Morloc
+## Morloc
 
 [morloc](https://github.com/morloc-project/morloc) is a functional programming
 language where functions are imported from foreign languages and unified
@@ -15,7 +17,7 @@ computing, and file reading/writing. In the far future, I hope to develop
 `morloc` into a query language that returns optimized programs from an infinite
 "library" of functions and compositions of functions.
 
-# Haskell projects
+## Haskell projects
 
  * [lsystems](https://github.com/arendsee/lsystems) an experimental package for
    specifying and generating deterministic or stochastic L-systems graphics.
@@ -27,7 +29,7 @@ computing, and file reading/writing. In the far future, I hope to develop
 ![lsys5]({{site.baseurl}}/assets/img/sb1-5.png)
 
 
-# Python packages on PyPi
+## Python packages on PyPi
 
  * [pgraphdb](https://github.com/arendsee/pgraphdb) is a Python library and CLI
    tool for interacting with a GraphDB database. It allows uploading of RDF
@@ -57,7 +59,7 @@ computing, and file reading/writing. In the far future, I hope to develop
    search and replace using pattern and replacement expressions from a table.
 
 
-# R CRAN/rOpenSci packages
+## R CRAN/rOpenSci packages
 
  * [rmonad](https://github.com/arendsee/rmonad) an experimental monadic
    pipeline tool for building branching workflows, storing select intermediate
@@ -75,7 +77,7 @@ computing, and file reading/writing. In the far future, I hope to develop
    automatically download them.
 
 
-# Other
+## Other
 
  * [Language Of Dice](https://github.com/arendsee/language-of-dice) was my
    first attempt at developing a programming language. The goal was to develop
@@ -87,7 +89,7 @@ computing, and file reading/writing. In the far future, I hope to develop
    syntax, grammar, and a rudimentary lexer and parser.
 
 
-# R Shiny apps
+## R Shiny apps
 
 [metaoku](https://github.com/arendsee/metaoku)
 ([app](https://metaoku.shinyapps.io/archive/)) was my grand vision for a means
@@ -120,7 +122,7 @@ impossible.
 ![interstellar]({{site.baseurl}}/assets/img/interstellar.png)
 
 
-# Grad-school jetsam
+## Grad-school jetsam
 
  * [synder](https://github.com/arendsee/synder) is a high-performance program
    that maps genomic loci from one species to another using a synteny map. The
