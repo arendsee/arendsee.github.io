@@ -1,6 +1,7 @@
 *.gem
 *.sublime-project
 *.sublime-workspace
+*.jekyll-cache
 .DS_Store
 .RData
 .Rhistory
