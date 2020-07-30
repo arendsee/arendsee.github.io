@@ -1,0 +1,143 @@
+I"'F<p>A powerful strategy in functional programming is building complex functions
+from simple ones using functional composition. A basic composition function can
+be implemented in R as below</p>
+
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">compose</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="k">function</span><span class="p">(</span><span class="n">...</span><span class="p">){</span><span class="w">
+    </span><span class="n">fs</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">list</span><span class="p">(</span><span class="n">...</span><span class="p">)</span><span class="w">
+    </span><span class="k">function</span><span class="p">(</span><span class="n">...</span><span class="p">){</span><span class="w">
+        </span><span class="n">x</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">fs</span><span class="p">[[</span><span class="m">1</span><span class="p">]](</span><span class="n">...</span><span class="p">)</span><span class="w">
+        </span><span class="k">for</span><span class="p">(</span><span class="n">f</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">fs</span><span class="p">[</span><span class="m">-1</span><span class="p">]){</span><span class="w">
+            </span><span class="n">x</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+        </span><span class="n">x</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span><span class="n">foo</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">compose</span><span class="p">(</span><span class="n">runif</span><span class="p">,</span><span class="w"> </span><span class="n">mean</span><span class="p">,</span><span class="w"> </span><span class="n">abs</span><span class="p">,</span><span class="w"> </span><span class="n">log</span><span class="p">)</span><span class="w">
+</span><span class="n">set.seed</span><span class="p">(</span><span class="m">42</span><span class="p">)</span><span class="w">
+</span><span class="n">foo</span><span class="p">(</span><span class="m">100</span><span class="p">,</span><span class="w"> </span><span class="n">min</span><span class="o">=</span><span class="m">-5</span><span class="p">,</span><span class="w"> </span><span class="n">max</span><span class="o">=</span><span class="m">5</span><span class="p">)</span></code></pre></figure>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">## [1] -1.407365</code></pre></figure>
+
+<p>This code is correct, but the returned function is not informative.</p>
+
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">foo</span></code></pre></figure>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">## function(...){
+##         x &lt;- fs[[1]](...)
+##         for(f in fs[-1]){
+##             x &lt;- f(x)
+##         }
+##         x
+##     }
+## &lt;environment: 0x170ee08&gt;</code></pre></figure>
+
+<p>It would be nice if the composed function printed like this:</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">## function(n, min=0, max=1){
+##     log(abs(mean(runif(n, min, max))))
+## }</code></pre></figure>
+
+<p>These compositions are first-class citizens, in that they can be used,
+modified, and viewed exactly like any other function. This is especially
+important if compositions are returned from inside a package. Transparent
+compositions are also open to metaprograming. For example, if we want to reset
+the default value for <code class="language-plaintext highlighter-rouge">max</code> to 2, we can call <code class="language-plaintext highlighter-rouge">formals(foo)$max = 2</code>. This
+would be impossible for the opaque compositions.</p>
+
+<p>To build a transparent composition, there are three levels we need to consider:</p>
+
+<ol>
+  <li>formal parameters – <code class="language-plaintext highlighter-rouge">n, min=0, max=1</code></li>
+  <li>body – <code class="language-plaintext highlighter-rouge">log(abs(mean(runif())))</code></li>
+  <li>arguments passed to runif – <code class="language-plaintext highlighter-rouge">n, min, max</code></li>
+</ol>
+
+<p>The first step is pretty easy</p>
+
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">compose_a</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="k">function</span><span class="p">(</span><span class="n">...</span><span class="p">){</span><span class="w">
+  </span><span class="c1"># get the innermost function</span><span class="w">
+  </span><span class="n">inner</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">list</span><span class="p">(</span><span class="n">...</span><span class="p">)[[</span><span class="m">1</span><span class="p">]]</span><span class="w">
+     
+  </span><span class="c1"># start with the innermost function</span><span class="w">
+  </span><span class="n">fun</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">inner</span><span class="w">
+
+  </span><span class="c1"># remove its body</span><span class="w">
+  </span><span class="n">body</span><span class="p">(</span><span class="n">fun</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="kc">NULL</span><span class="w">
+
+  </span><span class="n">fun</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span><span class="n">compose_a</span><span class="p">(</span><span class="n">runif</span><span class="p">,</span><span class="w"> </span><span class="n">mean</span><span class="p">,</span><span class="w"> </span><span class="n">abs</span><span class="p">,</span><span class="w"> </span><span class="n">log</span><span class="p">)</span></code></pre></figure>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">## function (n, min = 0, max = 1) 
+## NULL
+## &lt;environment: namespace:stats&gt;</code></pre></figure>
+
+<p>We can build the body of the function piece by piece, like this</p>
+
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">foo</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">runif</span><span class="w">
+</span><span class="n">body_str</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="s1">'{log(abs(mean(runif(n, min, max))))}'</span><span class="w">
+</span><span class="n">body</span><span class="p">(</span><span class="n">foo</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">parse</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="n">body_str</span><span class="p">)</span></code></pre></figure>
+
+<p>But of course, we have to build <code class="language-plaintext highlighter-rouge">body_str</code> from the input arguments.</p>
+
+<p>We can get the character names of the given arguments</p>
+
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">compose_b</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="k">function</span><span class="p">(</span><span class="n">...</span><span class="p">){</span><span class="w">
+    </span><span class="n">sapply</span><span class="p">(</span><span class="n">match.call</span><span class="p">(</span><span class="n">expand.dots</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">),</span><span class="w"> </span><span class="n">deparse</span><span class="p">)[</span><span class="m">-1</span><span class="p">]</span><span class="w">
+</span><span class="p">}</span></code></pre></figure>
+
+<p>and the names of the paramers <code class="language-plaintext highlighter-rouge">runif</code> takes</p>
+
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">compose_c</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="k">function</span><span class="p">(</span><span class="n">...</span><span class="p">){</span><span class="w">
+    </span><span class="n">inner</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">list</span><span class="p">(</span><span class="n">...</span><span class="p">)[[</span><span class="m">1</span><span class="p">]]</span><span class="w">
+    </span><span class="n">methods</span><span class="o">::</span><span class="n">formalArgs</span><span class="p">(</span><span class="n">inner</span><span class="p">)</span><span class="w">
+</span><span class="p">}</span></code></pre></figure>
+
+<p>Now for a bit of string manipulation</p>
+
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">compose_d</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="k">function</span><span class="p">(</span><span class="n">...</span><span class="p">){</span><span class="w">
+  </span><span class="n">inner</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">list</span><span class="p">(</span><span class="n">...</span><span class="p">)[[</span><span class="m">1</span><span class="p">]]</span><span class="w">
+
+  </span><span class="n">fun_names</span><span class="w">  </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">sapply</span><span class="p">(</span><span class="n">match.call</span><span class="p">(</span><span class="n">expand.dots</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">)[</span><span class="m">-1</span><span class="p">],</span><span class="w"> </span><span class="n">deparse</span><span class="p">)</span><span class="w">
+  </span><span class="n">inner_args</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">paste0</span><span class="p">(</span><span class="n">methods</span><span class="o">::</span><span class="n">formalArgs</span><span class="p">(</span><span class="n">inner</span><span class="p">),</span><span class="w"> </span><span class="n">collapse</span><span class="o">=</span><span class="s1">', '</span><span class="p">)</span><span class="w">
+
+  </span><span class="c1"># function for recursive wrapping of calls</span><span class="w">
+  </span><span class="n">compose_</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="k">function</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="w"> </span><span class="n">g</span><span class="p">){</span><span class="w"> </span><span class="n">sprintf</span><span class="p">(</span><span class="s2">"%s(%s)"</span><span class="p">,</span><span class="w"> </span><span class="n">g</span><span class="p">,</span><span class="w"> </span><span class="n">f</span><span class="p">)</span><span class="w"> </span><span class="p">}</span><span class="w">
+  </span><span class="c1"># functional body as an expression</span><span class="w">
+  </span><span class="n">body_expr</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">Reduce</span><span class="p">(</span><span class="n">compose_</span><span class="p">,</span><span class="w"> </span><span class="n">fun_names</span><span class="p">,</span><span class="w"> </span><span class="n">init</span><span class="o">=</span><span class="n">inner_args</span><span class="p">)</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span><span class="n">compose_d</span><span class="p">(</span><span class="n">runif</span><span class="p">,</span><span class="w"> </span><span class="n">mean</span><span class="p">,</span><span class="w"> </span><span class="n">abs</span><span class="p">,</span><span class="w"> </span><span class="n">log</span><span class="p">)</span></code></pre></figure>
+
+<p>Putting all this together we get the function</p>
+
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">compose2</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="k">function</span><span class="p">(</span><span class="n">...</span><span class="p">){</span><span class="w">
+  </span><span class="n">inner</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">list</span><span class="p">(</span><span class="n">...</span><span class="p">)[[</span><span class="m">1</span><span class="p">]]</span><span class="w">
+
+  </span><span class="n">fun_names</span><span class="w">  </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">sapply</span><span class="p">(</span><span class="n">match.call</span><span class="p">(</span><span class="n">expand.dots</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">)[</span><span class="m">-1</span><span class="p">],</span><span class="w"> </span><span class="n">deparse</span><span class="p">)</span><span class="w">
+  </span><span class="n">inner_args</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">paste0</span><span class="p">(</span><span class="n">methods</span><span class="o">::</span><span class="n">formalArgs</span><span class="p">(</span><span class="n">inner</span><span class="p">),</span><span class="w"> </span><span class="n">collapse</span><span class="o">=</span><span class="s1">', '</span><span class="p">)</span><span class="w">
+  </span><span class="n">compose_</span><span class="w">   </span><span class="o">&lt;-</span><span class="w"> </span><span class="k">function</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="w"> </span><span class="n">g</span><span class="p">){</span><span class="w"> </span><span class="n">sprintf</span><span class="p">(</span><span class="s2">"%s(%s)"</span><span class="p">,</span><span class="w"> </span><span class="n">g</span><span class="p">,</span><span class="w"> </span><span class="n">f</span><span class="p">)</span><span class="w"> </span><span class="p">}</span><span class="w">
+  </span><span class="n">body_expr</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">Reduce</span><span class="p">(</span><span class="n">compose_</span><span class="p">,</span><span class="w"> </span><span class="n">fun_names</span><span class="p">,</span><span class="w"> </span><span class="n">init</span><span class="o">=</span><span class="n">inner_args</span><span class="p">)</span><span class="w">
+  </span><span class="n">body_expr</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">parse</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="n">body_expr</span><span class="p">)</span><span class="w">
+
+  </span><span class="n">fun</span><span class="w">              </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">inner</span><span class="w">
+  </span><span class="n">body</span><span class="p">(</span><span class="n">fun</span><span class="p">)</span><span class="w">        </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">body_expr</span><span class="w">
+  </span><span class="n">environment</span><span class="p">(</span><span class="n">fun</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">parent.frame</span><span class="p">()</span><span class="w">
+
+  </span><span class="n">fun</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span><span class="n">foo</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">compose2</span><span class="p">(</span><span class="n">runif</span><span class="p">,</span><span class="w"> </span><span class="n">mean</span><span class="p">,</span><span class="w"> </span><span class="n">abs</span><span class="p">,</span><span class="w"> </span><span class="n">log</span><span class="p">)</span><span class="w">
+</span><span class="n">set.seed</span><span class="p">(</span><span class="m">42</span><span class="p">)</span><span class="w">
+</span><span class="n">foo</span><span class="p">(</span><span class="m">100</span><span class="p">,</span><span class="w"> </span><span class="n">min</span><span class="o">=</span><span class="m">-5</span><span class="p">,</span><span class="w"> </span><span class="n">max</span><span class="o">=</span><span class="m">5</span><span class="p">)</span></code></pre></figure>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">## [1] -1.407365</code></pre></figure>
+
+<p>Now <code class="language-plaintext highlighter-rouge">foo</code> prints cleanly</p>
+
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">foo</span></code></pre></figure>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">## function (n, min = 0, max = 1) 
+## log(abs(mean(runif(n, min, max))))</code></pre></figure>
+
+<p>You can view the default values with <code class="language-plaintext highlighter-rouge">formals(foo)</code>. You can alter the
+defaults, e.g. <code class="language-plaintext highlighter-rouge">formals(foo)$min &lt;- 0</code>.</p>
+:ET
