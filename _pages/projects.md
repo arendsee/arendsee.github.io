@@ -1,5 +1,7 @@
 ---
-layout: single
+layout: splash
+header:
+    image: /assets/img/head.png
 title: "Projects"
 permalink: /projects/
 comments: true
