@@ -42,7 +42,7 @@ computing, and file reading/writing. In the far future, I hope to develop
    triple format and uploading it to a GraphDB database. It allows access to
    the data through SPARQL queries and can return FASTA file sequence.
 
-<img src="{{site.baseurl}}/assets/img/octofludb.png" width=400>
+<img src="{{site.baseurl}}/assets/img/octofludb.png" width=400 style="display:block;margin-left:auto;margin-right:auto;">
 
  * [flutile](https://github.com/flu-crew/flutile) is a specialized suite of
    tools designed for the flu-crew at
@@ -51,7 +51,7 @@ computing, and file reading/writing. In the far future, I hope to develop
    positions relative to references for each influenza A subtype. This allows
    sequences to be compared across studies.
 
-<img src="{{site.baseurl}}/assets/img/flutile.png" width=400>
+<img src="{{site.baseurl}}/assets/img/flutile.png" width=400 style="display:block;margin-left:auto;margin-right:auto;">
 
  * [smot](https://github.com/flu-crew/smot) is a python package and CLI tool
    for general purpose phylogenetic tree sub-sampling, annotation, and
@@ -62,7 +62,7 @@ computing, and file reading/writing. In the far future, I hope to develop
  * [smof](https://github.com/incertae-sedis/smof) is a CLI tool for working
    with FASTA files.
 
-![smof1]({{site.baseurl}}/assets/img/smof.png)
+<img src="{{site.baseurl}}/assets/img/smof1.png" style="display:block;margin-left:auto;margin-right:auto;">
 
  * [regref](https://github.com/arendsee/regref) offers regular expression based
    search and replace using pattern and replacement expressions from a table.
