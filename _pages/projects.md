@@ -8,7 +8,7 @@ author_profile: true
 
 ## Morloc
 
-[morloc](www.morloc.io) is a functional programming
+[morloc](http://www.morloc.io) is a functional programming
 language where functions are imported from foreign languages and unified
 through a common type system. The compiler generates the code needed to compose
 functions across languages and also to direct automation of mundane tasks such
