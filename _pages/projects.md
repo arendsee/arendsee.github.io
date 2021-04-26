@@ -137,15 +137,19 @@ impossible.
 ![interstellar]({{site.baseurl}}/assets/img/interstellar.png)
 
 
-## Grad-school jetsam
+## Genomics and orphan-gene sleuthing from grad-school
 
  * [synder](https://github.com/arendsee/synder) is a high-performance program
    that maps genomic loci from one species to another using a synteny map. The
    core algorithm is written in C++ and wrapped in R.
 
- * [phylostratr](https://github.com/arendsee/phylostratr) a buggy little R
-   tool I made as a graduate student and that has unfortunately become popular
-   enough that people pester me for updates and fixes.
+![synder]({{site.baseurl}}/assets/img/synder.png)
 
- * [fagin](https://github.com/arendsee/fagin) another project I developed as a
-   graduate student that, fortunately, no one uses.
+ * [phylostratr](https://github.com/arendsee/phylostratr) an R pipeline for conventional phylostratigraphy.
+
+![phylostratr]({{site.baseurl}}/assets/img/phylostratr.png)
+
+ * [fagin](https://github.com/arendsee/fagin) an R pipline based on `synder`
+   and `rmonad` for inferring the origins of genes.
+
+![fagin]({{site.baseurl}}/assets/img/fagin.png)
