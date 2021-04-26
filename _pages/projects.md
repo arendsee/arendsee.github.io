@@ -42,7 +42,7 @@ computing, and file reading/writing. In the far future, I hope to develop
    triple format and uploading it to a GraphDB database. It allows access to
    the data through SPARQL queries and can return FASTA file sequence.
 
-![octofludb]({{site.baseurl}}/assets/img/octofludb.png)
+<img src="{{site.baseurl}}/assets/img/octofludb.png" width=400>
 
  * [flutile](https://github.com/flu-crew/flutile) is a specialized suite of
    tools designed for the flu-crew at
@@ -51,7 +51,7 @@ computing, and file reading/writing. In the far future, I hope to develop
    positions relative to references for each influenza A subtype. This allows
    sequences to be compared across studies.
 
-![flutile]({{site.baseurl}}/assets/img/flutile.png)
+<img src="{{site.baseurl}}/assets/img/flutile.png" width=400>
 
  * [smot](https://github.com/flu-crew/smot) is a python package and CLI tool
    for general purpose phylogenetic tree sub-sampling, annotation, and
