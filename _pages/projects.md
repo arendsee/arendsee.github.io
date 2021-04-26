@@ -143,13 +143,13 @@ impossible.
    that maps genomic loci from one species to another using a synteny map. The
    core algorithm is written in C++ and wrapped in R.
 
-<img src="{{site.baseurl}}/assets/img/synder.png" width="75%", style="display:block;margin-left:auto;margin-right:auto">
+<img src="{{site.baseurl}}/assets/img/synder.png" width="75%" style="display:block;margin-left:auto;margin-right:auto;">
 
  * [phylostratr](https://github.com/arendsee/phylostratr) an R pipeline for conventional phylostratigraphy.
 
-<img src="{{site.baseurl}}/assets/img/phylostratr.png" width="75%", class=center>
+<img src="{{site.baseurl}}/assets/img/phylostratr.png" width="75%" style="display:block;margin-left:auto;margin-right:auto;">
 
  * [fagin](https://github.com/arendsee/fagin) an R pipline based on `synder`
    and `rmonad` for inferring the origins of genes.
 
-<img src="{{site.baseurl}}/assets/img/fagin.png" width="75%", class=center>
+<img src="{{site.baseurl}}/assets/img/fagin.png" width="75%" style="display:block;margin-left:auto;margin-right:auto;">
