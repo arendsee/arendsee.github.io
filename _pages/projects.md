@@ -9,14 +9,27 @@ author_profile: true
 
 ## Morloc
 
-[morloc](http://www.morloc.io) is a functional programming
-language where functions are imported from foreign languages and unified
-through a common type system. The compiler generates the code needed to compose
-functions across languages and also to direct automation of mundane tasks such
-as data validation, type/format conversions, data caching, distributed
-computing, and file reading/writing. In the far future, I hope to develop
-`morloc` into a query language that returns optimized programs from an infinite
-"library" of functions and compositions of functions.
+[morloc](http://www.morloc.io) is a functional programming language where
+functions are imported from foreign languages and unified through a common type
+system. The compiler generates the code needed to compose functions across
+languages and also to direct automation of mundane tasks such as data
+validation, type/format conversions, data caching, distributed computing, and
+file reading/writing. The ultimate goal is to develop `morloc` into a query
+language that returns optimized programs from an infinite "library" of
+functions and compositions of functions.
+
+
+Import many implementations for a function from any supported language:
+<img src="{{site.baseurl}}/assets/img/morloc-1.png" style="display:block;margin-left:auto;margin-right:auto;">
+
+Declare one common type signature that describes many implementation-specific ones
+<img src="{{site.baseurl}}/assets/img/morloc-2.png" style="display:block;margin-left:auto;margin-right:auto;">
+
+Specify new programs by composing these general functions
+<img src="{{site.baseurl}}/assets/img/morloc-3.png" style="display:block;margin-left:auto;margin-right:auto;">
+
+Build executables and let the compiler optimize the choice of implementations
+<img src="{{site.baseurl}}/assets/img/morloc-4.png" style="display:block;margin-left:auto;margin-right:auto;">
 
 ## Haskell projects
 
