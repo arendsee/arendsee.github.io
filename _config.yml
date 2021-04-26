@@ -22,7 +22,7 @@ subtitle                 : # site tagline that appears below site title in masth
 name                     : "Zebulun Arendsee"
 description              : "Portfolio and technical blog of Zebulun Arendsee"
 url                      : "https://zebulun-arendsee.com"
-baseurl                  : "/project"
+baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : "arendsee/arendsee.github.io"
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
 logo                     : # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
