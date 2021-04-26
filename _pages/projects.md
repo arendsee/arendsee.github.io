@@ -23,12 +23,7 @@ computing, and file reading/writing. In the far future, I hope to develop
  * [lsystems](https://github.com/arendsee/lsystems) an experimental package for
    specifying and generating deterministic or stochastic L-systems graphics.
 
-![lsys1]({{site.baseurl}}/assets/img/sb1-1.png)
-![lsys2]({{site.baseurl}}/assets/img/sb1-2.png)
-![lsys3]({{site.baseurl}}/assets/img/sb1-3.png)
-![lsys4]({{site.baseurl}}/assets/img/sb1-4.png)
-![lsys5]({{site.baseurl}}/assets/img/sb1-5.png)
-
+<img src="{{site.baseurl}}/assets/img/lsystems.png" style="display:block;margin-left:auto;margin-right:auto;">
 
 ## Python packages on PyPi
 
