@@ -20,16 +20,16 @@ functions and compositions of functions.
 
 
 Import many implementations for a function from any supported language:
-<img src="{{site.baseurl}}/assets/img/morloc-1.png" style="display:block;margin-left:auto;margin-right:auto;">
+<img src="{{site.baseurl}}/assets/img/morloc-1.png" width="75%" style="display:block;margin-left:auto;margin-right:auto;">
 
 Declare one common type signature that describes many implementation-specific ones
-<img src="{{site.baseurl}}/assets/img/morloc-2.png" style="display:block;margin-left:auto;margin-right:auto;">
+<img src="{{site.baseurl}}/assets/img/morloc-2.png" width="75%" style="display:block;margin-left:auto;margin-right:auto;">
 
 Specify new programs by composing these general functions
-<img src="{{site.baseurl}}/assets/img/morloc-3.png" style="display:block;margin-left:auto;margin-right:auto;">
+<img src="{{site.baseurl}}/assets/img/morloc-3.png" width="75%" style="display:block;margin-left:auto;margin-right:auto;">
 
 Build executables and let the compiler optimize the choice of implementations
-<img src="{{site.baseurl}}/assets/img/morloc-4.png" style="display:block;margin-left:auto;margin-right:auto;">
+<img src="{{site.baseurl}}/assets/img/morloc-4.png" width="75%" style="display:block;margin-left:auto;margin-right:auto;">
 
 ## Haskell projects
 
