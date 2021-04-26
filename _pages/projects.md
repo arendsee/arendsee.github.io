@@ -50,6 +50,8 @@ computing, and file reading/writing. In the far future, I hope to develop
    for general purpose phylogenetic tree sub-sampling, annotation, and
    summarization.
 
+![smot]({{site.baseurl}}/assets/img/smot.png)
+
  * [smof](https://github.com/incertae-sedis/smof) is a CLI tool for working
    with FASTA files.
 
