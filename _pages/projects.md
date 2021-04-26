@@ -1,4 +1,5 @@
 ---
+layout: single
 title: "Projects"
 permalink: /projects/
 comments: true
