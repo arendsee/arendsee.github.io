@@ -25,6 +25,12 @@ computing, and file reading/writing. In the far future, I hope to develop
 
 <img src="{{site.baseurl}}/assets/img/lsystems.png" style="display:block;margin-left:auto;margin-right:auto;">
 
+ * [lsystems](https://github.com/arendsee/tessellate) an experimental
+   semi-regular tesselation package with aspirations of growing up to be
+   something different. 
+
+<img src="{{site.baseurl}}/assets/img/tessellate.png" width=400 style="display:block;margin-left:auto;margin-right:auto;">
+
 ## Python packages on PyPi
 
  * [pgraphdb](https://github.com/arendsee/pgraphdb) is a Python library and CLI
