@@ -17,6 +17,9 @@ minimal_mistakes_skin    : "default" # "air", "aqua", "contrast", "dark", "dirt"
 # Site Settings
 locale                   : "en-US"
 title                    : "The Rabbit Hole"
+layout: splash
+header:
+    image: /assets/img/head.png
 title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
 name                     : "Zebulun Arendsee"
