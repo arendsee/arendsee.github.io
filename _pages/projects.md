@@ -76,7 +76,7 @@ Build executables and let the compiler optimize the choice of implementations
  * [smof](https://github.com/incertae-sedis/smof) is a CLI tool for working
    with FASTA files.
 
-<img src="{{site.baseurl}}/assets/img/smof1.png" style="display:block;margin-left:auto;margin-right:auto;">
+<img src="{{site.baseurl}}/assets/img/smof.png" style="display:block;margin-left:auto;margin-right:auto;">
 
  * [regref](https://github.com/arendsee/regref) offers regular expression based
    search and replace using pattern and replacement expressions from a table.
