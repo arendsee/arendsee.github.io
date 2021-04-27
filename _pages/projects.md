@@ -71,7 +71,7 @@ Build executables and let the compiler optimize the choice of implementations
    for general purpose phylogenetic tree sub-sampling, annotation, and
    summarization.
 
-![smot]({{site.baseurl}}/assets/img/smot.png)
+<img src="{{site.baseurl}}/assets/img/smot.png" width="%80" style="display:block;margin-left:auto;margin-right:auto;">
 
  * [smof](https://github.com/incertae-sedis/smof) is a CLI tool for working
    with FASTA files.
