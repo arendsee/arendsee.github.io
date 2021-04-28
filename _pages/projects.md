@@ -42,7 +42,7 @@ Build executables and let the compiler optimize the choice of implementations
    semi-regular tesselation package with aspirations of growing up to be
    something different. 
 
-<img src="{{site.baseurl}}/assets/img/tessellate.png" width=400 style="display:block;margin-left:auto;margin-right:auto;">
+<img src="{{site.baseurl}}/assets/img/tessellate.png" width=600 style="display:block;margin-left:auto;margin-right:auto;">
 
 ## Python packages on PyPi
 
