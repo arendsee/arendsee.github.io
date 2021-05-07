@@ -38,7 +38,7 @@ Build executables and let the compiler optimize the choice of implementations
 
 <img src="{{site.baseurl}}/assets/img/lsystems.png" style="display:block;margin-left:auto;margin-right:auto;">
 
- * [lsystems](https://github.com/arendsee/tessellate) an experimental
+ * [tessellate](https://github.com/arendsee/tessellate) an experimental
    semi-regular tesselation package with aspirations of growing up to be
    something different. 
 
